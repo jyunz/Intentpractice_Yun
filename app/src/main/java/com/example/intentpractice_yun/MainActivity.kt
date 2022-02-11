@@ -10,12 +10,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        sendMessageBtn.setOnClickListener{
-            val myIntent = Intent(this)
-        }
-        moveToOtherBtn.setOnclickListener {
+        moveToOtherBtn.setOnClickListener {
+
+//            다른 화면으로 이동 (OtherActivity)
             val myIntent = Intent(this, OtherActivity::class.java)
             startActivity(myIntent)
         }
+
+
+
     }
 }

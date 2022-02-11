@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Intentpractice_Yun">
         <activity
-            android:name=".MessageActivity"
+            android:name=".OtherActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
