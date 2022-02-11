@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Intentpractice_Yun">
         <activity
+            android:name=".MassegeActivity"
+            android:exported="false" />
+        <activity
             android:name=".OtherActivity"
             android:exported="false" />
         <activity
