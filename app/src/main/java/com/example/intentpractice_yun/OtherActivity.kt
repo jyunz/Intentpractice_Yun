@@ -10,6 +10,10 @@ class OtherActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_other)
 
+        returnToMainBtn.setOnClickListener {
+            finish()
+        }
+
 
     }
 }
