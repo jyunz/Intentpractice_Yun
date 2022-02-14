@@ -1,6 +1,7 @@
 package com.example.intentpractice_yun
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -12,6 +13,32 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+//       콜액션은 허가를 받지 못해서 실행이 되이 않음
+//        Logcat에 Exception부분이 설명임
+        callBtr.setOnClickListener {
+            val inputPhoneNum = phoneNumEdt.text.toString()
+            val myUri = Uri.parse("tel:${inputPhoneNum}")
+
+            val myIntent = Intent(Intent.ACTION_CALL,myUri)
+
+            startActivity(myIntent)
+        }
+
+//         DIAL액션 예제
+//        parse는 스트링을 분석해서 내가 쓸 용도로 만들어달라는 뜻.
+
+        dialBtr.setOnClickListener {
+
+//            phoneNumEDT에 입력한 전화번호를 받아서 => 해당 번호에 전화 연결
+//            입력한 phonNum을 알아야 하니 변수 설정
+
+            val inputPhoneNum = phoneNumEdt.text.toString()
+            val myUri = Uri.parse("tel:${inputPhoneNum}")
+
+            val myIntent = Intent(Intent.ACTION_DIAL,myUri)
+
+            startActivity(myIntent)
+        }
 
 //        ForResult를 써야 하는 상황인지 확실히 볼것.
         editNicknameBtn.setOnClickListener {
