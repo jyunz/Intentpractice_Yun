@@ -70,15 +70,23 @@
 
 
     <Button
-        android:id="@+id/dialBtr"
+        android:id="@+id/dialBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="전화연결 (DIAL)"/>
 
     <Button
-        android:id="@+id/callBtr"
+        android:id="@+id/callBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="전화연결 (CALL)"/>
+
+
+    <Button
+        android:id="@+id/smsBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="문자전송화면으로 이동"/>
+
 
 </LinearLayout>

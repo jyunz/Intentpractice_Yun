@@ -13,9 +13,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        smsBtn.setOnClickListener {
+            val inputPhoneNum = phoneNumEdt.text.toString()
+            val myUri = Uri.parse("smsto:${inputPhoneNum}")
+            val myIntent = Intent(Intent.ACTION_SENDTO,myUri)
+            myIntent.putExtra("sms_body", "미리 내용 입력")
+            startActivity(myIntent)
+        }
+
 //       콜액션은 허가를 받지 못해서 실행이 되이 않음
 //        Logcat에 Exception부분이 설명임
-        callBtr.setOnClickListener {
+        callBtn.setOnClickListener {
             val inputPhoneNum = phoneNumEdt.text.toString()
             val myUri = Uri.parse("tel:${inputPhoneNum}")
 
@@ -27,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 //         DIAL액션 예제
 //        parse는 스트링을 분석해서 내가 쓸 용도로 만들어달라는 뜻.
 
-        dialBtr.setOnClickListener {
+        dialBtn.setOnClickListener {
 
 //            phoneNumEDT에 입력한 전화번호를 받아서 => 해당 번호에 전화 연결
 //            입력한 phonNum을 알아야 하니 변수 설정
