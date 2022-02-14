@@ -19,7 +19,10 @@ class MainActivity : AppCompatActivity() {
 //            비행기 티켓발권
             val messageIntent = Intent(this, MessageActivity::class.java )
 
-//            수화물 첨부
+//            들고갈 데이터를 messageIntent에 첨부
+//            수화물 첨부 "message"라는 이름으로 도착지에서 찾을 수 있음./그 내용이 val inputmessage로 저장되어서
+//            message라는 이름표에 inputmessage라는 캐리어를 찾는것.
+//            messageIntent.putExtra("데이터 이름표", 실제 보내줄 변수 or 값)
             messageIntent.putExtra("message",inputmessage)
 
 //            실제 출발
