@@ -6,9 +6,23 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    val REQUEST_FOR_NICKNAME = 1005
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+//        ForResult를 써야 하는 상황인지 확실히 볼것.
+        editNicknameBtn.setOnClickListener {
+
+            val myIntent = Intent(this, EditNicknameActivity::class.java)
+//
+//            startActivityForResult(myIntent,1005)라고 하면 숫자 때문에 이해가 어려울 수 있음.
+//            그래서 멤버 변수를 설정해줌 (ex.val REQUEST_FOR_NICKNAME = 1005)
+
+            startActivityForResult(myIntent,REQUEST_FOR_NICKNAME)
+        }
 
         sendMessageBtn.setOnClickListener {
 
